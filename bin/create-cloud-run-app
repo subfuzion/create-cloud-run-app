@@ -1,0 +1,48 @@
+#!/bin/bash
+set -eu
+
+replace() {
+	a="$1"
+	b="$2"
+	f="$3"
+	# handle gnu and bsd sed
+	sed -i.tmp "s/$a/$b/g" "$f" && rm "$f.tmp"
+}
+
+dir="${1:-.}"
+if [[ -z "$dir" ]]; then
+	echo "Error: missing destination pathname"
+	exit 1
+fi
+
+# Not sure if `basename` is available by default on macOS, so using bash:
+app=${dir##*/}
+if [[ "$app" == "." ]]; then
+	app=${PWD##*/}
+fi
+
+echo "Creating app..."
+git clone --depth=1 https://github.com/subfuzion/cloud-run-app.git "$dir"
+rm -rf "$dir/.git" >/dev/null
+
+printf "⏳ Preparing app..."
+cd "$dir"
+#replace "cloud-run-app" "$app" package.json
+npm pkg set name="$app"
+npm pkg set version="0.1.0"
+git init 1>/dev/null
+git add . 1>/dev/null
+git commit -m "Initial commit" 1>/dev/null
+git branch -M main
+npm install 1>/dev/null
+npm run prepare 1>/dev/null && \
+	npx husky add .husky/pre-commit "npx lint-staged --allow-empty" && \
+	git add . && \
+	git commit -m "chore: prepare pre-commit hook"
+
+echo "✅ Success: created cloud-run-app ($app)"
+echo "🚀 You're ready to start coding!"
+if [[ "$dir" != "." ]]; then
+	echo "Enter:"
+	printf "\tcd %s\n" "$dir"
+fi

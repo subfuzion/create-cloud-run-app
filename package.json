@@ -1,0 +1,9 @@
+{
+  "name": "@subfuzion/create-cloud-run-app",
+  "version": "0.1.0",
+  "description": "Create a Node.js app with TypeScript for Cloud Run",
+  "license": "MIT",
+  "bin": {
+    "create-cloud-run-app": "bin/create-cloud-run-app"
+  }
+}
