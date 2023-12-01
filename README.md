@@ -77,7 +77,7 @@ repo.
 
 Licensed under [MIT].
 
-[@subfuzion/typescript-starter-app]: https://github.com/subfuzion/typescript-starter-app/
+[@subfuzion/cloud-run-app]: https://github.com/subfuzion/cloud-run-app/
 [EditorConfig]: https://editorconfig.org/
 [ESLint]: https://eslint.org/
 [Husky]: https://typicode.github.io/husky/
