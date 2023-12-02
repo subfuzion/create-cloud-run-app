@@ -56,18 +56,6 @@ If you want to use the latest version from the [cloud-run-app] repo, enter:
 npx github:subfuzion/create-cloud-run-app [path]
 ```
 
-> **WARNING**
->
-> Currently under development. This implementation assumes:
-> 
-> 1. You're running the latest LTS version (or greater) of [Node.js]
->    (the current implementation might work with earlier versions, but this
-     hasn't been verified).
-> 2. `node` and `npm` (automatically installed with Node.js) are in the path.
-> 3. `git` is in your path and [user.name] and [user.email] are already
->    configured.
-> 4. Your system can run a `bash` script (for now).
-
 ## Source
 
 The source for the generated app is in the [cloud-run-app] repo.
