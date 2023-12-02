@@ -4,7 +4,7 @@ Get started with boilerplate for writing, testing, linting, and formatting
 TypeScript for a Node.js app to deploy to Cloud Run.
 
 ```
-npx @subfuzion/create-cloud-run-app [path]
+npx create-cloud-run-app [path]
 ```
 
 > **Note**
@@ -47,10 +47,10 @@ on file changes under the `src` or `test` directories, and also re-run tests.
 To use the latest published version, enter:
 
 ```
-npx @subfuzion/create-cloud-run-app@latest [path]
+npx create-cloud-run-app@latest [path]
 ```
 
-If you want to use the latest version from the GitHub [repo], enter:
+If you want to use the latest version from the [cloud-run-app] repo, enter:
 
 ```
 npx github:subfuzion/create-cloud-run-app [path]
@@ -70,14 +70,13 @@ npx github:subfuzion/create-cloud-run-app [path]
 
 ## Source
 
-The source for the generated app is in the [@subfuzion/cloud-run-app]
-repo.
+The source for the generated app is in the [cloud-run-app] repo.
 
 ## License
 
 Licensed under [MIT].
 
-[@subfuzion/cloud-run-app]: https://github.com/subfuzion/cloud-run-app/
+[cloud-run-app]: https://github.com/subfuzion/cloud-run-app/
 [EditorConfig]: https://editorconfig.org/
 [ESLint]: https://eslint.org/
 [Husky]: https://typicode.github.io/husky/
@@ -86,7 +85,6 @@ Licensed under [MIT].
 [MIT]: ./LICENSE
 [Node.js]: https://nodejs.org/en/download/
 [Prettier]: https://prettier.io/
-[repo]: https://github.com/subfuzion/create-typescript-app/
 [TypeScript]: https://typescriptlang.org/
 [user.name]: https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git#setting-your-git-username-for-every-repository-on-your-computer/
 [user.email]: https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address#setting-your-email-address-for-every-repository-on-your-computer/
