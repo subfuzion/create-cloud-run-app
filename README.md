@@ -12,6 +12,8 @@ npx create-cloud-run-app [path]
 > - If `path` isn't specified, it defaults to the current working directory (`.`).
 > - The directory under `path` must be empty. 
 
+See [article on dev.to] for more details.
+
 ## Details
 
 Configuration boilerplate for jump starting your app development includes:
@@ -64,6 +66,7 @@ The source for the generated app is in the [cloud-run-app] repo.
 
 Licensed under [MIT].
 
+[article on dev.to]: https://dev.to/subfuzion/cloud-run-typescript-boilerplate-for-getting-started-4gco
 [cloud-run-app]: https://github.com/subfuzion/cloud-run-app/
 [EditorConfig]: https://editorconfig.org/
 [ESLint]: https://eslint.org/
