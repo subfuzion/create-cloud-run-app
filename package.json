@@ -1,6 +1,6 @@
 {
   "name": "create-cloud-run-app",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Create a Node.js app with TypeScript for Cloud Run",
   "license": "MIT",
   "directories": {
