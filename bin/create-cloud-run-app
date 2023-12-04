@@ -22,7 +22,7 @@ if [[ "$app" == "." ]]; then
 fi
 
 echo "Creating app..."
-git clone --depth=1 https://github.com/subfuzion/cloud-run-app.git "$dir"
+git clone --single-branch --branch main --depth=1 https://github.com/subfuzion/cloud-run-app.git "$dir"
 rm -rf "$dir/.git" >/dev/null
 
 printf "⏳ Preparing app..."
