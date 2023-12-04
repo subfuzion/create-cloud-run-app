@@ -14,6 +14,7 @@ if [[ -z "$dir" ]]; then
 	echo "Error: missing destination pathname"
 	exit 1
 fi
+dir="${dir%/}"
 
 # Not sure if `basename` is available by default on macOS, so using bash:
 app=${dir##*/}
@@ -21,19 +22,30 @@ if [[ "$app" == "." ]]; then
 	app=${PWD##*/}
 fi
 
+# fetch
 echo "Creating app..."
 git clone --single-branch --branch main --depth=1 https://github.com/subfuzion/cloud-run-app.git "$dir"
 rm -rf "$dir/.git" >/dev/null
 
+# customize
 printf "⏳ Preparing app..."
 cd "$dir"
-#replace "cloud-run-app" "$app" package.json
+
 npm pkg set name="$app"
 npm pkg set version="0.1.0"
+
+#if [[ -f "$dir/src/lib/util.test.ts" ]]; then
+#	npx sed -i "s/cloud-run-app/${app}/g" "$dir/src/lib/util.test.ts"
+#fi
+create-cloud-run-app-subst "$PWD" "cloud-run-app=${app}"
+
+# initialize version control
 git init 1>/dev/null
 git add . 1>/dev/null
 git commit -m "Initial commit" 1>/dev/null
 git branch -M main
+
+# finalize (install, prepare, build, test)
 npm install 1>/dev/null
 npm run prepare 1>/dev/null && \
 	npx husky add .husky/pre-commit "npx lint-staged --allow-empty" && \
@@ -42,6 +54,7 @@ npm run prepare 1>/dev/null && \
 npm run build 1>/dev/null
 npm run test 1>/dev/null
 
+# happy path
 echo "✅ Success: created cloud-run-app ($app)"
 echo "🚀 You're ready to start coding!"
 if [[ "$dir" != "." ]]; then
