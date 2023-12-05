@@ -1,6 +1,7 @@
 # create-cloud-run-app
 
-[![https://nodei.co/npm/create-cloud-run-app.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/create-cloud-run-app.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/create-cloud-run-app)
+[![npm](https://img.shields.io/npm/dt/create-cloud-run-app)](https://www.npmjs.com/package/create-cloud-run-app)
+
 
 Get started with boilerplate for writing, testing, linting, and formatting
 TypeScript for a Node.js app to deploy to Cloud Run.
